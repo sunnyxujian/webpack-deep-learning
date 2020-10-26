@@ -1,0 +1,23 @@
+{
+  "name": "webpack-deep-learning",
+  "version": "1.0.0",
+  "description": "学习demo代码",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js --devtool source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Itherma/webpack-deep-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Itherma/webpack-deep-learning/issues"
+  },
+  "homepage": "https://github.com/Itherma/webpack-deep-learning#readme",
+  "devDependencies": {
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0"
+  }
+}
