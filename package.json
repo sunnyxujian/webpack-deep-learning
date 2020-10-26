@@ -4,7 +4,7 @@
   "description": "学习demo代码",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js --devtool source-map"
+    "start": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

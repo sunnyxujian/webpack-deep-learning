@@ -7,9 +7,8 @@ const path = require('path');
 
 module.exports = {
   // JavaScript 执行入口文件
-  entry: './main.js',
+  entry: './src/main.js',
   // 设置上下文为src
-  context: path.resolve(__dirname, 'src'),
   output: {
     // 把所有依赖的模块合并输出到一个 bundle.js 文件
     filename: 'bundle.js',
