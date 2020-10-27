@@ -1,0 +1,10 @@
+#app{
+  color: red;
+  &:hover{
+    opacity: 0.5;
+  }
+}
+
+#text{
+  font-style: italic;
+}

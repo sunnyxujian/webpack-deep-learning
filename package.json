@@ -17,7 +17,15 @@
   },
   "homepage": "https://github.com/Itherma/webpack-deep-learning#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
     "webpack": "^5.2.0",
     "webpack-cli": "^4.1.0"
-  }
+  },
+  "dependencies": {}
 }

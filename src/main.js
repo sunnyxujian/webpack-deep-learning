@@ -6,3 +6,12 @@
 const { show } = require('./utils.js')
 
 show(document.querySelector('#app'),'hello webpack!')
+
+import'./style.scss'
+
+const img = document.createElement('img')
+img.width = 200
+import image from './jihui.jpg'
+img.src = image
+
+document.body.append(img)

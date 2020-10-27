@@ -21,18 +21,36 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   output: {
     // 输出文件都放到 dist 目录下
-    path: path.resolve(__dirname, 'dist_[hash:8]'),
+    path: path.resolve(__dirname, 'dist'),
     // 设置文件名
-    filename:'[name]_[chunkhash:8].js',
-    // 配置cdn公共路径
-    publicPath: 'https://cdn.example.com/assets/',
-    // 用于配置这个异步插入的script标签的 crossorigin 值
-    crossOriginLoading:'use-credentials',
-    // 编写的库将通过 var 被赋值给通过 library 指定名称的变量
-    library: 'LibraryName',
-    // 配置以何种方式导出库
-    libraryTarget: 'var' | 'commonjs' | 'commonjs2' | 'this' | 'window' | 'global',
-    // output.libraryExport 配置要导出的模块中哪些子模块需要被导出。 它只有在 output.libraryTarget 被设置成 commonjs 或者 commonjs2 时使用才有意义。
-    libraryExport:'show'
+    filename:'[name].js',
+  },
+  module:{
+    noParse: /jquery|chartjs/,
+    rules:[
+      {
+        // 命中 JavaScript 文件
+        test: /\.js$/,
+        // 用 babel-loader 转换 JavaScript 文件
+        // ?cacheDirectory 表示传给 babel-loader 的参数，用于缓存 babel 编译结果加快重新编译速度
+        use: ['babel-loader?cacheDirectory'],
+        // 只命中src目录里的js文件，加快 Webpack 搜索速度
+        include: path.resolve(__dirname, 'src')
+      },
+      {
+        // 命中 SCSS 文件
+        test: /\.scss$/,
+        // 使用一组 Loader 去处理 SCSS 文件。
+        // 处理顺序为从后到前，即先交给 sass-loader 处理，再把结果交给 css-loader 最后再给 style-loader。
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        // 排除 node_modules 目录下的文件
+        exclude: path.resolve(__dirname, 'node_modules'),
+      },
+      {
+        // 对非文本文件采用 file-loader 加载
+        test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf)$/,
+        use: ['file-loader'],
+      },
+    ]
   }
 };
