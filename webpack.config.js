@@ -52,5 +52,11 @@ module.exports = {
         use: ['file-loader'],
       },
     ]
+  },
+  resolve:{
+    alias:{
+      '@components': path.resolve(__dirname, 'src/components/')
+    },
+    mainFields: ['browser', 'main']
   }
 };

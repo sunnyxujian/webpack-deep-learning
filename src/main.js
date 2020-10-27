@@ -4,6 +4,7 @@
  * @Date: 2020-10-26 16:11:00
  */
 const { show } = require('./utils.js')
+const { component } = require('@components/SomeComponent.js')
 
 show(document.querySelector('#app'),'hello webpack!')
 
@@ -15,3 +16,5 @@ import image from './jihui.jpg'
 img.src = image
 
 document.body.append(img)
+
+document.querySelector('#container').innerHTML = component()
