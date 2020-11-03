@@ -14,14 +14,14 @@ module.exports = {
   },
   resolve: {
     // 先尝试 ts 后缀的 TypeScript 源码文件
-    extensions: ['.ts', '.js']
+    extensions: ['.jsx', '.js',]
   },
   devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        test:/(\.jsx|\.js)$/,
+        loader: 'babel-loader'
       }
     ]
   }
