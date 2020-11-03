@@ -5,10 +5,15 @@
  */
 const { show } = require('./utils.js')
 const { component } = require('@components/SomeComponent.js')
+const lodash = require('lodash')
+const jquery = require('jquery')
 
 show(document.querySelector('#app'),'hello webpack!')
 
 import'./style.scss'
+
+console.log(lodash.join(['Hello', 'webpack'], ' '));
+console.log(jquery.version);
 
 const img = document.createElement('img')
 img.width = 200
